@@ -1,0 +1,18 @@
+name: Release Windows
+
+on:
+  workflow_dispatch:
+  release:
+    types: published
+
+jobs:
+  run:
+
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build
+      run: build.bat
